@@ -8,9 +8,19 @@ import sys
 read = sys.stdin.readline
 s = read()
 lis = s.split('-')
-val = eval(lis[0])
-if len(lis) > 1 :
-    for v in lis[1:] :
-        val = eval(str(val) + '-' + '(' + v + ')')
+# 바로 eval 을 쓰게되면.. 안되네? 04 이런거떄문에
+lis2 = []
+for l in lis :
+    lis2.append(list(map(int,l.split('+'))))
+
+val = sum(lis2[0])
+if len(lis2) > 1 :
+    for v in lis2[1:] :
+        val -= sum(v)
 print(val)
 
+
+#---------- 다른 사람 코드
+n = [sum(int(x) for x in y.split('+')) for y in input().split('-')]
+print(n[0] - sum(n[1:]))
+# 훨씬 간결하고, list comprehension 을 적극 이용한 점이 인상깊다.
