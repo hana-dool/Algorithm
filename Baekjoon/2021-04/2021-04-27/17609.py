@@ -49,6 +49,7 @@ def right_check(w,i):
         return(1)
 
 import sys
+sys.stdin = open('17609.txt','r')
 read = sys.stdin.readline
 T = int(read())
 for _ in range(T):
