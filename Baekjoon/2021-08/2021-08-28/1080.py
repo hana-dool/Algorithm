@@ -20,5 +20,3 @@ if mat_raw == mat_wt :
 else :
     print(-1)
 
-for x in range(0) :
-    print(x)
